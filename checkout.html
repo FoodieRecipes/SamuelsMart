@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Samuel'sMart</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🛒 Samuel'sMart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Checkout</h2>
+        <div style="max-width:600px; margin:0 auto; background:white; padding:3rem; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+            <h3>Order Summary</h3>
+            <div id="checkout-summary"></div>
+            <button onclick="completeOrder()" class="cta-button" style="width:100%; margin-top:2rem;">Place Order</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Samuel'sMart</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        function completeOrder() {
+            alert("✅ Order placed successfully! Thank you for shopping at Samuel'sMart.");
+            localStorage.removeItem('cart');
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

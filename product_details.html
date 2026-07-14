@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Samuel'sMart</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🛒 Samuel'sMart</div>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div id="product-detail"></div>
+    </section>
+
+<script src="assets/js/script.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script>
+        function loadProductDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id'));
+            const product = products.find(p => p.id === id);
+
+            if (!product) {
+                document.getElementById('product-detail').innerHTML = "<h2>Product not found</h2>";
+                return;
+            }
+
+            document.getElementById('product-detail').innerHTML = `
+                <div>
+                    <img src="${product.image}" style="width:100%; border-radius:12px;" alt="${product.name}">
+                </div>
+                <div>
+                    <h1>${product.name}</h1>
+                    <p style="font-size:2rem; color:#e74c3c;">₦${product.price.toLocaleString()}</p>
+                    <p><strong>Category:</strong> ${product.category}</p>
+                    <p style="margin:20px 0;">High-quality ${product.name.toLowerCase()} for your construction needs.</p>
+                    <button onclick='addToCart(${JSON.stringify(product)})' class="cta-button" style="width:100%;">Add to Cart</button>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProductDetails);
+    </script>
+</body>
+</html>

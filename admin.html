@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .admin-container { display: flex; min-height: 100vh; }
+        .sidebar { width: 250px; background: #2c3e50; color: white; padding: 2rem 1rem; }
+        .content { flex: 1; padding: 2rem; background: #f8f9fa; }
+        .stat { background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <a href="#">Dashboard</a>
+            <a href="#">Products</a>
+            <a href="#">Orders</a>
+            <a href="#">Messages</a>
+            <a href="index.html">← Back to Store</a>
+        </div>
+        <div class="content">
+            <h1>Welcome to Admin Dashboard</h1>
+            <div class="stat">
+                <h3>Total Sales</h3>
+                <h2>₦1,245,000</h2>
+            </div>
+            <button onclick="alert('Demo Action')">Manage Products</button>
+        </div>
+    </div>
+</body>
+</html>
